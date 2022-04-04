@@ -1,4 +1,4 @@
-[1:17 PM] Ashwini AM
+
 pipeline {
 agent any stages {
 stage('Check out') {
