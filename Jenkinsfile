@@ -20,6 +20,18 @@ agent any
   bat 'mvn clean package'
        }
      }
+  
+  stage('sonar analysis')
+      {
+    steps 
+        {
+    withSonarQubeEnv('ZensarCodeAnalysis')
+          {
+     bat 'mvn sonar:sonar'
+          }
+        }
+      }
+    
   stage('JaCoCo Report')
     {
   steps
