@@ -35,16 +35,17 @@ agent any
     {
     steps
       {
-    echo 'Building Doker image'
+      bat 'docker build -t saur2698/test .'
         }
-        }
+       }
     stage('Push Doker Image to Doker Hub')
     {
     steps 
       {
-    echo 'Pushing Doker image'
+        bat 'docker login -u username -p password'
+     bat 'docker push saur2698/test'
         }
-        }
+       }
     
   stage('JaCoCo Report')
     {
